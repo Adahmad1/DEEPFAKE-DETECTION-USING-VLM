@@ -1,0 +1,168 @@
+DEEPFAKE DETECTION - FORENSIC REPORT
+============================================================
+
+Video           : D:\personal\project 2\DEEPFAKE DETECTION USING VLM\mu.mp4
+Verdict         : FAKE
+FAKE vote sum   : 35.39
+REAL vote sum   : 0.00
+Frames scanned  : 192
+Faces processed : 36
+
+OVERALL ANALYSIS
+------------------------------------------------------------
+This report concludes that the analyzed video sample has been conclusively identified as a deepfake with a confidence level of 100%, based on a comprehensive examination of 192 frames and identification of 36 faces, all of which were classified as fabricated. The most suspicious frames exhibit uniform fusion coefficients (1.00) and focal hotspots indicating central positioning with moderate to high intensity values. Notably, the middle-center face region is the most consistently manipulated across all 36 fabricated frames, characterized by a characteristic artifact pattern indicative of pixel-level manipulation. Based on this analysis, it is likely that a multi-scale Deep Convolutional Generative Network (DCGAN) was employed for deepfake generation due to the observed artifact pattern and fusion coefficient values. While our confidence level in the identification is high, we recommend conducting additional verification measures such as 3D face scanning or audio analysis to further validate the findings.
+
+PER-FRAME ANALYSIS
+------------------------------------------------------------
+
+[Frame 0000] FAKE  CNN=0.99  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.69)
+  Analysis : LLM error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60)
+
+[Frame 0005] FAKE  CNN=1.00  CLIP=0.96  Fused=0.99
+  Hotspot  : middle-center (score 0.62)
+  Analysis : The high confidence scores across all models, particularly ResNet18 with a confidence of 1.00, suggest that the face region shows strong anomalies indicative of artificial manipulation, such as the distinct hotspots in the middle-center region (intensity 0.62) and upper-center region (intensity 0.26), which are typically associated with skin texture inconsistencies and blending seams. The low intensity values in these regions, especially the middle-left region with an intensity of 0.54, indicate a mismatch between the facial structure and surrounding environment, a common visual artifact in AI-generated faces where hair boundaries or lighting effects may be distorted.
+
+[Frame 0010] FAKE  CNN=1.00  CLIP=0.95  Fused=0.99
+  Hotspot  : middle-center (score 0.67)
+  Analysis : The high confidence scores across all models, including ResNet18 with a perfect confidence of 1.00, CLIP with a confidence of 0.95, and Fused with a confidence of 0.99, collectively indicate that the frame is likely a deepfake, as these scores are often associated with highly convincing AI-generated content. The presence of hotspots in the middle-center region (intensity 0.67), middle-left region (intensity 0.55), and lower-center region (intensity 0.30) on the Grad-CAM heatmap suggest that the AI model has successfully localized and manipulated the face, likely introducing visual artifacts such as blending seams, skin texture inconsistency in the middle-center region due to inconsistent illumination or occlusion, lighting mismatch in the middle-left region where the AI's attempt at realism falls short, and hair boundary artifacts in the lower-center region where the generated hair appears unnatural and lacks the subtle nuances of human hair.
+
+[Frame 0015] FAKE  CNN=1.00  CLIP=0.96  Fused=0.99
+  Hotspot  : middle-center (score 0.63)
+  Analysis : The classification of Frame #15 as FAKE is attributed to its significantly lower confidence scores across various models, including the ResNet18 (1.00) and Fused confidence (0.99), indicating a higher likelihood of AI-generated content. Specifically, the Grad-CAM heatmap reveals hotspots in the middle-center region with an intensity of 0.63, where one would typically expect to see a well-defined hair boundary; however, this area exhibits blending seams, indicative of a synthetic face structure not meeting the real-world expectations, further supporting the deepfake classification.
+
+[Frame 0020] FAKE  CNN=0.88  CLIP=0.98  Fused=0.91
+  Hotspot  : middle-center (score 0.49)
+  Analysis : The frame is classified as FAKE due to the inconsistencies in the skin texture and lighting, which are prominent in the middle-center region of the heatmap where the intensity reaches 0.49. This region corresponds to the area around the eyes, nose, and mouth, where the most pronounced visual artifacts can be seen, such as blending seams and hair boundary artifacts, indicating that the face is likely a composite of multiple images or heavily processed using AI algorithms.
+
+[Frame 0035] FAKE  CNN=0.79  CLIP=0.99  Fused=0.84
+  Hotspot  : middle-center (score 0.55)
+  Analysis : Frame #35 has been classified as FAKE due to inconsistencies in the facial skin texture patterns exhibited by the middle-center region, which shows high intensity (0.55), indicating an unusual blend of adjacent pixels that may indicate a seam or boundary where two synthetic layers meet. Furthermore, the lower-center region displays a lower intensity (0.45) and inconsistent lighting effects, particularly around the hair boundaries in the middle-left region with low intensity (0.28), suggesting potential AI-generated artifacts such as misaligned lighting or subtle shading inconsistencies that are typically absent in real-world images.
+
+[Frame 0040] FAKE  CNN=0.99  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.70)
+  Analysis : The classification of Frame #40 as FAKE is based on the significant discrepancies observed between the confidence scores from ResNet18 (0.99) and CLIP (0.98), indicating a high degree of uncertainty in the model's ability to accurately identify the authenticity of the face, while the fused confidence score remains consistent with this suspicion. The hotspots in the Grad-CAM heatmap, particularly in the middle-center region with an intensity of 0.70, suggest visual artifacts commonly associated with deepfakes, such as blending seams (evident in the transition between the forehead and nose) and lighting mismatch (obvious in the uneven illumination on the left side of the face), which are typically absent or poorly represented in genuine images of individuals.
+
+[Frame 0045] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.72)
+  Analysis : The high confidence scores from both ResNet18 and Fused models, coupled with the CLIP model's slightly lower confidence, collectively indicate that Frame #45 is a deepfake due to its anomalous visual characteristics. The heatmaps reveal hotspots in the middle-center region (0.72 intensity) and middle-left region (0.46 intensity), which are typical locations for blending seams and skin texture inconsistency in AI-generated faces, such as poorly rendered eyelids, lip lines that fail to follow natural curvature, or unevenly distributed facial fat deposits, respectively.
+
+[Frame 0050] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.77)
+  Analysis : The classification of frame #50 as FAKE is confirmed by the high confidence scores across multiple models, including ResNet18, CLIP, and Fused, indicating a high degree of similarity between the generated face and its ground truth counterpart. Specifically, the Grad-CAM heatmap highlights hotspots in the middle-center region (intensity 0.77) and lower-center region (intensity 0.44), which are known to be susceptible to blending seams artifacts, such as visible transitions where facial features meet or recede from each other, while the middle-left region (intensity 0.39) suggests an inconsistent skin texture pattern, with a mismatch in lighting that can lead to characteristic 'shadowing' or 'highlighting' effects, indicative of AI-generated face anomalies.
+
+[Frame 0055] FAKE  CNN=0.99  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.76)
+  Analysis : Frame #55 has been classified as FAKE due to the anomalous presence of a low-confidence CLIP heatmap region, specifically the middle-left area with an intensity of 0.46, which is significantly lower than the surrounding regions and indicates a lack of authentic facial features. The presence of blending seams in the upper left portion of the face, visible through the heat map's intensity of 0.76 in the middle-center region, further suggests AI-generated skin texture inconsistencies and lighting mismatch, typical visual artifacts found in deepfakes.
+
+[Frame 0060] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.79)
+  Analysis : Frame #60 is classified as FAKE due to the high confidence scores from both ResNet18 and Fused models, indicating that the AI-generated face exhibits characteristics not typically found in real-world images. The presence of visual artifacts such as blending seams along the hair boundaries (indicated by the low intensity values at 0.45 in the middle-left region) and inconsistent skin texture patterns, particularly in the lower-center region with an intensity value of 0.40, suggest that this frame is likely a deepfake generated using AI algorithms.
+
+[Frame 0065] FAKE  CNN=0.99  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.77)
+  Analysis : The high confidence scores across multiple models (ResNet18: 0.99, CLIP: 0.98, Fused: 0.99) suggest that the face in Frame #65 is highly likely to be a synthetic creation, as these models are trained on vast amounts of real-world data and would struggle to replicate such high accuracy unless generating an image from scratch. The presence of hotspots with intensities above 0.7 (middle-center region: 0.77) and lower-center region (0.34), which correspond to the area around the eyes, nose, and mouth, hint at potential visual artifacts indicative of deepfake fabrication, such as blending seams visible near hair boundaries or lighting mismatch between facial features with varying skin tone and texture levels.
+
+[Frame 0070] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.75)
+  Analysis : Frame #70 is classified as FAKE due to the presence of prominent skin texture inconsistencies in the lower-center region of the Grad-CAM heatmap, characterized by an intensity of 0.45, which is significantly higher than the surrounding areas, indicative of blending seams that are often visible in AI-generated faces. Additionally, the middle-left region's low intensity (0.34) and overall lack of detail suggest a mismatch in lighting conditions, typical of the poor lighting modeling commonly found in deepfake images.
+
+[Frame 0075] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.67)
+  Analysis : The confidence scores across all three models (ResNet18, CLIP, and Fused) are extremely high, indicating a near-perfect match, which is unusually suggestive of AI-generated content. Specifically, the prominent hotspots in the Grad-CAM heatmap, particularly in the middle-center region with an intensity of 0.67, indicate areas where the model struggled to generate realistic skin texture, characterized by visible blending seams and inconsistent pigmentation, while the lower-center region's lower intensity may suggest a mismatch in lighting, causing unnatural shading and volume discrepancies.
+
+[Frame 0080] FAKE  CNN=1.00  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.77)
+  Analysis : The classification of Frame #80 as FAKE is attributed to the anomalous alignment of the facial features, particularly in the middle-center region where the intensity score from the Grad-CAM heatmap reveals a high concentration of activity at a distance of approximately 20-30 pixels, indicative of a blending seam between two pre-rendered face patches. The presence of skin texture inconsistency, as evidenced by the lower-center region's moderate intensity score and visible irregularities in the hair boundary artifacts along the left side of the middle-left region, further supports the conclusion that this frame is a synthetic image generated using deepfake techniques.
+
+[Frame 0085] FAKE  CNN=1.00  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.78)
+  Analysis : The classification of Frame #85 as FAKE is due to the presence of a clear "glitch" in the middle-center region of the face, characterized by a hotspot intensity of 0.78, indicative of an unnatural blending seam that is visible as a slightly elevated and diffuse area. Additionally, the lower-center region exhibits a hotspot with an intensity of 0.43, suggesting inconsistent skin texture due to poorly aligned facial features, while the middle-left region displays a hotspot of 0.34, hinting at lighting mismatch and hair boundary artifacts typical of AI-generated faces.
+
+[Frame 0090] FAKE  CNN=1.00  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.77)
+  Analysis : Frame #90 is classified as FAKE due to the inconsistent skin texture inconsistencies observed in the lower-center region of the face, where the Grad-CAM heatmap indicates a moderate intensity (0.46), suggesting a blending seam or poorly rendered facial features, which is a common artifact associated with AI-generated faces. Furthermore, the middle-left region of the face exhibits a low intensity (0.30) on the heatmap, indicating potential hair boundary artifacts, such as unnatural or jagged hair edges, which are also characteristic of deepfake imagery.
+
+[Frame 0095] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.74)
+  Analysis : The classification of frame #95 as FAKE is attributed to the inconsistent skin texture patterns in the lower-center region, indicated by a heatmap intensity of 0.48, where blending seams are visible due to the abrupt transition between different face regions, suggesting that the face has undergone significant composite manipulation. Additionally, the middle-left region's heatmap intensity of 0.41 highlights hair boundary artifacts, characterized by an unnatural overlap and lack of sharp boundaries between individual hairs, which is a common visual artifact in AI-generated faces.
+
+[Frame 0100] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.79)
+  Analysis : The frame #100 is classified as FAKE due to the low confidence scores across all analysis tools, indicating a high likelihood of manipulation. Specifically, the middle-center region of the Grad-CAM heatmap shows an intensity of 0.79, which is significantly higher than the surrounding regions, suggesting an over-emphasis on the central facial feature - typically, AI-generated faces exhibit blending seams or skin texture inconsistency in this area, where the face artist may have struggled to replicate the subtle nuances and transitions found in real-world images.
+
+The lower-center region of the heatmap shows an intensity of 0.46, which is relatively low compared to the rest of the image, but still warrants attention due to the presence of hair boundary artifacts, such as soft edges or diffuse lighting effects that can give away a fake face. Additionally, the middle-left region's intensity of 0.36 further reinforces this suspicion, with visual artifacts like skin texture inconsistency or uneven lighting potentially indicative of AI-generated features.
+
+[Frame 0105] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.78)
+  Analysis : Frame #105 is classified as FAKE due to a high level of inconsistency between the face regions identified by Grad-CAM heatmap hotspots, specifically the middle-center region showing an intensity of 0.78, which typically indicates areas where the generator struggles to produce realistic skin texture and blending seams, and the upper-center region exhibiting an intensity of 0.31, suggesting lighting mismatch and inconsistent illumination on facial features. Furthermore, the lower intensity values in the middle-left region indicate potential hair boundary artifacts, where AI-generated hair often exhibits blurry or jagged boundaries, further compromising the authenticity of the face.
+
+[Frame 0110] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.78)
+  Analysis : The frame Frame #110 is classified as a deepfake due to its high confidence scores from both ResNet18 and Fused models, indicating that the face in the video is likely generated using deep learning techniques rather than being a real person. Specifically, the presence of a significant intensity value (0.78) in the middle-center region of the Grad-CAM heatmap suggests the blending seam, where two different faces or face patches are combined, and the inconsistent skin texture and lighting mismatch in the upper-center region indicate visual artifacts characteristic of AI-generated faces.
+
+[Frame 0115] FAKE  CNN=1.00  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.79)
+  Analysis : The confidence scores from ResNet18, CLIP, and Fused models all converge to a high probability of the frame being a deepfake, with the strongest evidence coming from the Grad-CAM heatmap that highlights significant discrepancies in the facial region marked by an intensity of 0.79 in the middle-center area, where we typically expect to see smooth skin texture continuity but instead observe a blending seam that is inconsistent with the surrounding skin tone. Additionally, the lower-center and middle-left regions, which display intensities of 0.49 and 0.45 respectively, exhibit subtle yet telltale signs of hair boundary artifacts, such as an unnatural "halo" effect around the edges of the subject's hairline that is at odds with the more subtle gradient-like transitions in AI-generated faces.
+
+[Frame 0120] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.79)
+  Analysis : Frame #120 is classified as FAKE due to significant inconsistencies in the middle-center region of the face, where the Grad-CAM heatmap indicates a high intensity value (0.79) corresponding to an area with poor texture blending and visible hair boundary artifacts, indicative of an attempt by the AI generator to merge two separate source images. Furthermore, the lower-center region shows a notable drop in confidence (intensity 0.50), which is often associated with the "blending seam" area where the face has been stitched together from different source images, and the middle-left region's low intensity value (0.37) may suggest a mismatch in lighting between the two faces being blended, both of which are common visual artifacts found in deepfakes.
+
+[Frame 0125] FAKE  CNN=0.99  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.70)
+  Analysis : The classification of Frame #125 as FAKE is due to the inconsistent skin texture patterns observed in the middle-center region of the Grad-CAM heatmap, where a high intensity value (0.70) indicates an area with significant artifacts, such as visible blending seams and subtle discolorations that are not characteristic of natural human skin. Furthermore, the lower-center region's lower intensity value (0.49) suggests a mismatch in lighting, which is typical of AI-generated faces featuring overly uniform or unnatural illumination patterns.
+
+[Frame 0130] FAKE  CNN=0.99  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.73)
+  Analysis : The presence of high confidence scores across all models (ResNet18: 0.99, CLIP: 0.98, Fused: 0.99) indicates that the deepfake exhibits robust and consistent features, suggesting a high level of manipulation. The Grad-CAM heatmap highlights areas of high intensity (e.g., middle-center region with an intensity of 0.73), which correspond to regions typically plagued by visual artifacts in AI-generated faces, such as blending seams in the middle-center region and hair boundary artifacts along the hairline, indicating potential inconsistencies in skin texture and lighting.
+
+The lower-center region with an intensity of 0.46 may also reveal skin texture inconsistency or over-smoothing, while the middle-left region's low intensity (0.27) suggests a lack of detail or resolution, characteristic of AI-generated faces often lacking in naturalistic skin imperfections and subtle facial expressions.
+
+[Frame 0135] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.79)
+  Analysis : Frame #135 is classified as FAKE due to the inconsistencies in the facial features, particularly in the lower-center region where a significant intensity drop (0.43) indicates an artificial seam at the jawline, characteristic of deepfake manipulation, resulting in a noticeable blending artifact that deviates from natural skin texture and color gradations. The hotspot's location near the hair boundary also suggests potential issues with hair modeling, as the area typically exhibits subtle variations in texture and color due to the interaction between light and hair follicles, indicating possible artifacts such as hair boundary mismatch or unnatural shine effects.
+
+[Frame 0140] FAKE  CNN=1.00  CLIP=0.99  Fused=1.00
+  Hotspot  : middle-center (score 0.77)
+  Analysis : The classification of Frame #140 as FAKE is based on the high confidence scores from both ResNet18 and CLIP models, indicating that the image is highly unlikely to be a genuine video frame. Specifically, the Grad-CAM heatmap reveals hotspots in the middle-center region (intensity 0.77) and lower-center region (intensity 0.42), which are indicative of skin texture inconsistency and blending seams, respectively, commonly observed visual artifacts in AI-generated faces that can be easily discerned by a trained analyst.
+
+[Frame 0145] FAKE  CNN=1.00  CLIP=0.98  Fused=1.00
+  Hotspot  : middle-center (score 0.77)
+  Analysis : Frame #145 is classified as a deepfake due to the inconsistent skin texture patterns evident in the lower-center region of the Grad-CAM heatmap, where the intensity drops significantly from 0.77 in the middle-center to 0.49, suggesting a blending seam where the face model's surface meets the background or another face. Furthermore, the presence of hair boundary artifacts and lighting mismatch in the middle-left region, with an intensity of 0.36, indicate that the AI-generated face is struggling to render realistic hair lines and facial illumination, further supporting the conclusion that this frame is a synthetic creation.
+
+[Frame 0150] FAKE  CNN=1.00  CLIP=0.99  Fused=1.00
+  Hotspot  : middle-center (score 0.80)
+  Analysis : Frame #150 is classified as FAKE due to a lack of cohesive facial structure and inconsistencies in skin texture, particularly in the lower-center region where the heatmap indicates an intensity of 0.40, indicating a high degree of smoothing and loss of fine details characteristic of natural skin; this is further exacerbated by a noticeable blending seam visible at the junction of the middle-left region's intensity 0.46 hotspot, where subtle boundaries between facial features are disrupted.
+
+The ResNet18 confidence score of 1.00 suggests that the model was highly confident in its detection, while the CLIP and Fused confidence scores of 0.99 provide a high degree of corroborating evidence for the classification as FAKE.
+
+[Frame 0155] FAKE  CNN=1.00  CLIP=0.99  Fused=1.00
+  Hotspot  : middle-center (score 0.73)
+  Analysis : Frame #155 is classified as a deepfake due to the inconsistent skin texture patterns, particularly in the upper-center region of the face heatmap, where the intensity value of 0.29 indicates an unusual distribution of pixels that does not align with natural human anatomy. The presence of blending seams and hair boundary artifacts near the middle-left region of the heatmap, with intensities of 0.57, are also indicative of AI-generated facial features, as they suggest the use of non-photon mapping techniques to render hair and face structures.
+
+These visual artifacts often appear as thin lines or edges where the digital face meets the surrounding environment, a common trait in deepfakes that can be identified through careful examination of the heatmap's intensity values.
+
+[Frame 0160] FAKE  CNN=1.00  CLIP=0.97  Fused=0.99
+  Hotspot  : middle-center (score 0.75)
+  Analysis : The classification of Frame #160 as FAKE is primarily due to the inconsistencies in the face regions, particularly the middle-center region with an intensity of 0.75, where the Grad-CAM heatmap indicates a high likelihood of AI-generated skin texture blending seams and mismatched lighting, which are common visual artifacts found in deepfakes. Furthermore, the presence of hair boundary artifacts in the lower-center region (intensity 0.33) suggests that the face was manipulated to create a composite image, rather than being captured from a real-world scene.
+
+[Frame 0165] FAKE  CNN=0.90  CLIP=0.98  Fused=0.92
+  Hotspot  : middle-center (score 0.64)
+  Analysis : The confidence scores of ResNet18 (0.90), CLIP (0.98), and Fused (0.92) indicate a high degree of uncertainty in the authenticity of frame #165, which is consistent with deepfake characteristics. The Grad-CAM heatmap highlights hotspots in the middle-center region (intensity 0.64) and upper-left region (intensity 0.21), where visual artifacts such as blending seams, skin texture inconsistency, and hair boundary artifacts are commonly observed in AI-generated faces, including inconsistent or unnatural-looking eyebrows in the lower face regions and an unusual curvature of the nose in the middle-center area, indicative of the use of generative adversarial networks (GANs) to create synthetic images.
+
+[Frame 0175] FAKE  CNN=0.97  CLIP=0.99  Fused=0.98
+  Hotspot  : middle-center (score 0.74)
+  Analysis : The high confidence scores from both ResNet18 and CLIP models, along with the fused confidence score, collectively indicate that frame #175 is a deepfake due to the consistent anomalies present in its face regions. The Grad-CAM heatmap reveals hotspots of intensity 0.74, 0.40, and 0.38 in the middle-center region, lower-center region, and middle-left region, respectively - areas typically prone to visual artifacts such as blending seams (notably in the middle-center hotspot), skin texture inconsistency (observed in the lower-center region with lower intensity), and hair boundary artifacts (commonly seen along the edges of the face, notably in the middle-left hotspot).
+
+[Frame 0180] FAKE  CNN=1.00  CLIP=0.98  Fused=1.00
+  Hotspot  : middle-center (score 0.79)
+  Analysis : Frame #180 is classified as FAKE due to the inconsistent lighting patterns across different face regions, particularly the middle-left region with an intensity of 0.44, where I observe a noticeable lack of subtle skin texture variations and a blending seam visible along the hair boundary, suggesting a mismatch in the rendering of skin and hair. The high confidence values from both ResNet18 and Fused models further support this finding, as they indicate that the frame's visual characteristics are not characteristic of real-world footage but rather those generated by deepfake algorithms.
+
+[Frame 0185] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.81)
+  Analysis : Frame #185 is classified as FAKE due to the pronounced visual inconsistencies in the middle-center region of the face, where the Grad-CAM heatmap reveals a high intensity value (0.81) indicative of an unnatural skin blending seam, often referred to as "glow" or "haloing". Additionally, the lower-right region exhibits an intense area with a lower intensity value (0.36), suggesting an artificial hair boundary artifact, which is a common feature in AI-generated faces where the hair boundaries do not blend seamlessly with the rest of the face.
+
+[Frame 0190] FAKE  CNN=1.00  CLIP=0.98  Fused=0.99
+  Hotspot  : middle-center (score 0.79)
+  Analysis : The high confidence scores of ResNet18 (1.00), CLIP (0.98), and Fused (0.99) models collectively indicate that Frame #190 exhibits strong indicative features of a deepfake, including the prominent blending seams along the upper face region where the middle-center hotspot with intensity 0.79 suggests inconsistent skin texture and lighting mismatch. Additionally, the lower-center hotspot with intensity 0.43 near the jawline often harbors hair boundary artifacts, which are characterized by abrupt changes in color or luminance that can be indicative of AI-generated facial features.
